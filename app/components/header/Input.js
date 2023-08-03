@@ -3,7 +3,7 @@ import { SearchIcon } from '@heroicons/react/solid'; // Import the SearchIcon fr
 
 export const Input = () => {
   return (
-    <div className='flex gap-x-3 ml-2'>
+   <div className='flex gap-x-3 ml-2'>
       <input className='w-full py-2 px-4 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:border-blue-500'
        type='text' placeholder='  Search Item...' />
       <button>
