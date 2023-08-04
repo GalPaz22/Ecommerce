@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { ShoppingCartIcon } from '@heroicons/react/solid'
 
-export const Product = ({product}) => {
+export const Product = ({product, sendDataToParent }) => {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg p-2 flex flex-col justify-center items-center">
     <div className="w-48 h-48 relative flex flex-col justify-center items-center">
@@ -15,7 +15,7 @@ export const Product = ({product}) => {
     <div className="px-6 pt-4 pb-2">
       <p className="text-gray-900 font-semibold">Price: {product.price}$</p>
     </div>
-    <button className="bg-gray-600 text-white py-1 px-2 rounded-md hover:bg-blue-700 transition-colors duration-200 flex gap-2 ">
+    <button onClick={sendDataToParent('gal')} className="bg-gray-600 text-white py-1 px-2 rounded-md hover:bg-blue-700 transition-colors duration-200 flex gap-2 ">
       Add to cart<ShoppingCartIcon className="w-6 h-6"/>
     </button>
     
