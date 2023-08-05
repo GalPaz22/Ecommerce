@@ -1,8 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 import { ShoppingCartIcon } from '@heroicons/react/solid'
+import { Products } from './Products'
 
-export const Product = ({product, sendDataToParent }) => {
+export const Product = ({product, sendDataToParent, deleteProduct }) => {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg p-2 flex flex-col justify-center items-center">
     <div className="w-48 h-48 relative flex flex-col justify-center items-center">
@@ -18,10 +19,8 @@ export const Product = ({product, sendDataToParent }) => {
     <button onClick={sendDataToParent('gal')} className="bg-gray-600 text-white py-1 px-2 rounded-md hover:bg-blue-700 transition-colors duration-200 flex gap-2 ">
       Add to cart<ShoppingCartIcon className="w-6 h-6"/>
     </button>
+    <button onClick={deleteProduct} className='felx mt-2 bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-outline'>Delete</button>
     
   </div>
-  
-
-    
   )
 }

@@ -50,15 +50,16 @@ export default function Home() {
   ];
   const [product, setProduct]= useState(products)
   const UpdateProducts=(data)=>{
-    console.log(data);
-    console.log(products)
-    setProduct([...product, data])
-   }
+    setProduct([...product, data]);
+  console.log(product);}
+
+  const deleteProduct = () => {
+    setProduct(product.slice(0, product.length - 1));}
   return (
     <Layout>
       <main>
-        <Products  products={product}/>
-        <ProductForm NewProduct={UpdateProducts}/>
+        <Products NewProduct={UpdateProducts} deleteProduct={deleteProduct} products={product}/>
+       
       </main>
     </Layout>
   )

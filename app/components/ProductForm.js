@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 
-const ProductForm = ({  NewProduct  }) => {
+const ProductForm = ({  NewProduct }) => {
   const [newProduct, setNewProduct] = useState({
     image: '',
     name: '',
@@ -34,9 +34,10 @@ const ProductForm = ({  NewProduct  }) => {
   };
 
   return (
-    <div>
+    <div className='"flex justify-center items-center min-h-screen bg-gray-100"'>
       <h2>Create a New Product</h2>
-      <form onSubmit={handleFormSubmit}>
+      <form className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'
+            onSubmit={handleFormSubmit}>
         <label>
           Image URL:
           <input type="text" name="image" value={newProduct.image} onChange={handleInputChange} />
@@ -58,6 +59,7 @@ const ProductForm = ({  NewProduct  }) => {
           />
         </label>
         <button type="submit">Add Product</button>
+      
       </form>
     </div>
   );
